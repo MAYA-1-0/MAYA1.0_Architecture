@@ -51,7 +51,19 @@ The below tables depicts detailed specifications of all the parts of the robot M
 ![img](https://github.com/MAYA-1-0/MAYA1.0_Architecture/blob/main/images/Screenshot%20from%202022-02-28%2020-36-39.png)
 
 
+## Assembly of MAYA 1.0
 
+#### Navigation
+The key to visual SLAM is motion estimation. The early stage of research involved a frame to frame matching method for estimating the motion of the camera and various other methods based on feature matching were developed. There are two types of feature-based methods in the literature: filter-based methods and BA-based methods. The first monocular visual SLAM was developed in 2003. It was named MonoSLAM. MonoSLAM is considered a representative method in filter-based vSLAM algorithms. In MonoSLAM, camera motion and 3D structure of an unknown environment are estimated simultaneously using an extended Kalman filter (EKF). The problem of this method is a computational cost that increases in proportion to the size of an environment. In large environments, the size of a state vector becomes large due to the large number of feature points. In this case, it is difficult to achieve real-time computation. Recently, structured light-based RGB-D cameras such as Microsoft Kinect have become cheap and small
+Since such cameras provide 3D information in real-time, these cameras are also used in vSLAM algorithms. The appearance‑based SLAM uses the appearance information of the environment. It does not use the tracks of the robots or the landmarks in metric coordinates. The map is constructed based on the topological sense of the visited places. The spatial appearance SLAM uses the range data, rather than visual images, to detect the place and the loop closure. The combination of the visual and spatial information can improve robustness in recognizing the places and improve the distinctiveness of places using the place fingerprints, which contain color patches, vertical edges, and the extremity of line segments, to detect the loop closure. Topological maps are attractive due to the reduced storage requirements. They are more scalable to deal with larger environments. In addition, they have good integration with motion planning algorithms and are also more intuitive for persons to give navigation indications,
+
+
+
+Visual SLAM framework mainly comprises of the following module:
+* Initialization
+* Tracking
+* Mapping
+In the initialization module, the global coordinate system is to be defined first, and then a part of the environment is reconstructed as an initial map in the global coordinate system. To continuously estimate camera poses the initialization is followed by tracking and mapping. In tracking, the camera pose of the image with respect to the map is tracked from the reconstructed map. In order to do this, 2D–3D correspondences between the image and the map are first obtained from feature matching or feature tracking in the image. The camera pose is then computed from correspondences by solving the Perspective-n-Point (PnP) problem. It should be noted that most vSLAM algorithms assume that intrinsic camera parameters are calibrated beforehand so that they are known. Therefore, camera pose is equivalent to extrinsic camera parameters with translation and rotation of the camera in the global coordinate system. In the mapping, the map is expanded by computing the 3D structure of an environment when the camera observes unknown regions where the mapping has not been performed before.
 
 
 
