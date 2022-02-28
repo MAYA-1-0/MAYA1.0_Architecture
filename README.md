@@ -1,6 +1,8 @@
 #       METHODOLOGY
 
-### Female Humanoid Robot MAYA 1.0  Design
+### Female Humanoid Robot MAYA 1.0 Design
+
+![img1](https://github.com/MAYA-1-0/MAYA1.0_Architecture/blob/main/images/Screenshot%20from%202022-02-28%2020-22-19.png)
 
 The design of the humanoid depended on the following points
 * The female humanoid named “MAYA” is 1.55m in height.
@@ -16,7 +18,40 @@ Based on the identified role and working environment which implies that robots o
 ### Part Specification of MAYA 1.0 
 The below tables depicts detailed specifications of all the parts of the robot MAYA 1.0
 
-#### Head
+### Head
+
+**Neck: 71.40mm	Face: 182**
 
 ##### Calculated values for head
+
+
 ![img2](https://github.com/MAYA-1-0/MAYA1.0_Architecture/blob/main/images/Screenshot%20from%202022-02-28%2020-37-41.png)
+
+
+### Torso 
+
+**Torso: 404.6mm	Hand: 646.8mm**
+
+
+##### Calculated values for Torso
+![img3](https://github.com/MAYA-1-0/MAYA1.0_Architecture/blob/main/images/Screenshot%20from%202022-02-28%2020-37-31.png)
+
+
+### Base
+
+**Base: 742mm**
+
+
+##### Calculated values for Base
+![img4](https://github.com/MAYA-1-0/MAYA1.0_Architecture/blob/main/images/Screenshot%20from%202022-02-28%2020-37-08.png)
+
+
+### Degrees of Freedom
+
+![img](https://github.com/MAYA-1-0/MAYA1.0_Architecture/blob/main/images/Screenshot%20from%202022-02-28%2020-36-39.png)
+
+
+
+
+
+
